@@ -17,9 +17,9 @@ public class LogEvent implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
-//	@ManyToOne(optional = false)
-//	private LogFile logfile;
+
+	// @ManyToOne(optional = false)
+	// private LogFile logfile;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date created;
@@ -29,9 +29,14 @@ public class LogEvent implements Serializable {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date timeStamp;
-	
+
+	private String level;
+	private String thread;
+	private String message;
+	private String methodClass;
+
 	private String messageEvent;
-	
+
 	private String appAlias;
 
 	public Long getId() {
@@ -81,6 +86,37 @@ public class LogEvent implements Serializable {
 	public void setAppAlias(String appAlias) {
 		this.appAlias = appAlias;
 	}
-	
-	
+
+	public String getLevel() {
+		return level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+	}
+
+	public String getThread() {
+		return thread;
+	}
+
+	public void setThread(String thread) {
+		this.thread = thread;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getMethodClass() {
+		return methodClass;
+	}
+
+	public void setMethodClass(String methodClass) {
+		this.methodClass = methodClass;
+	}
+
 }
