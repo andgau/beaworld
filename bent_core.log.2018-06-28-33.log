@@ -1,0 +1,6 @@
+2018-06-28 00:00:33,044 INFO [[ACTIVE] ExecuteThread: '330' for queue: 'weblogic.kernel.Default (self-tuning)'] (AuthorizeInInterceptor.handleMessage:51) Metodo invocado: getConfigurationList
+2018-06-28 00:00:33,047 INFO [[ACTIVE] ExecuteThread: '330' for queue: 'weblogic.kernel.Default (self-tuning)'] (AuthorizeInInterceptor.handleMessage:54) IP Address: 172.27.1.32
+2018-06-28 00:26:43,438 INFO [[ACTIVE] ExecuteThread: '103' for queue: 'weblogic.kernel.Default (self-tuning)'] (AuthorizeInInterceptor.handleMessage:57) ID aplicacion llamante: BENT
+2018-06-28 00:26:43,440 INFO [[ACTIVE] ExecuteThread: '103' for queue: 'weblogic.kernel.Default (self-tuning)'] (AuthorizeInInterceptor.handleMessage:59) ID aplicacion llamada: BENT
+2018-06-28 00:26:43,442 INFO [[ACTIVE] ExecuteThread: '103' for queue: 'weblogic.kernel.Default (self-tuning)'] (AuthorizeInInterceptor.handleMessage:61) Num. metodos: 37
+2018-06-28 10:49:16,507 INFO [taskExecutor-2] (IssueEventDaoImpl.lockIssueEvent:203) ### BEGIN lockIssueEvent ###
