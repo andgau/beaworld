@@ -29,7 +29,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import es.sinjava.ui.Message;
 import es.sinjava.ui.MessageRepository;
-import es.sinjava.ui.repository.CityRepository;
+import es.sinjava.ui.domain.LogEvent;
 import es.sinjava.ui.service.IEventService;
 
 @Controller
@@ -38,31 +38,31 @@ public class MessageController {
 
 	private Logger logger = LoggerFactory.getLogger(MessageController.class);
 
-	@Autowired
-	CityRepository cityRepository;
-
-	@Autowired
-	IEventService eventService;
+	private final IEventService eventService;
 
 	private final MessageRepository messageRepository;
 
 	@Autowired
-	public MessageController(MessageRepository messageRepository) {
+	public MessageController(MessageRepository messageRepository, IEventService eventService) {
 		this.messageRepository = messageRepository;
+		this.eventService= eventService;
 	}
 
 	@RequestMapping
 	public ModelAndView list() {
 		Iterable<Message> messages = this.messageRepository.findAll();
 		System.out.println("Hola Caracola");
-		long count = cityRepository.count();
-		System.out.println("Capa persistencia ---> " + count);
-		logger.debug("Hola Bicho");
 
+		logger.debug("Hola Bicho");
+		
 		if (eventService.populateEvent()) {
 			System.out.println("SE ha llamado al servicio");
 		}
-		return new ModelAndView("messages/list", "messages", messages);
+		
+		Iterable<LogEvent> logEvents = eventService.getAllEvents();
+		
+		
+		return new ModelAndView("messages/list", "messages", logEvents);
 	}
 
 	@RequestMapping("{id}")

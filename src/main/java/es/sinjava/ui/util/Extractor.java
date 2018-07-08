@@ -15,7 +15,6 @@ public class Extractor {
 	private String methodClass;
 
 	public Extractor(String trace) {
-		System.out.println("---ESTE No Peta" +trace);
 		String[] fields = trace.split(" ");
 		String timeStampString = fields[0].concat(" ").concat(fields[1]);
 		// current

@@ -46,6 +46,7 @@ public class ImporterServiceImpl implements IImporterService {
 				newEvent.setAppAlias("Guay");
 				newEvent.setCreated(extractor.getTimeStamp());
 				newEvent.setLevel("·Level Guay");
+				newEvent.setMessageEvent(extractor.getMessage());
 				logEventRepository.save(newEvent);
 			}
 		}
