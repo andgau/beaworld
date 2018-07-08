@@ -15,6 +15,8 @@ package es.sinjava.ui.mvc;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -33,6 +35,8 @@ import es.sinjava.ui.service.IEventService;
 @Controller
 @RequestMapping("/")
 public class MessageController {
+
+	private Logger logger = LoggerFactory.getLogger(MessageController.class);
 
 	@Autowired
 	CityRepository cityRepository;
@@ -53,6 +57,7 @@ public class MessageController {
 		System.out.println("Hola Caracola");
 		long count = cityRepository.count();
 		System.out.println("Capa persistencia ---> " + count);
+		logger.debug("Hola Bicho");
 
 		if (eventService.populateEvent()) {
 			System.out.println("SE ha llamado al servicio");
@@ -67,6 +72,7 @@ public class MessageController {
 
 	@RequestMapping(params = "form", method = RequestMethod.GET)
 	public String createForm(@ModelAttribute Message message) {
+		System.out.println("El formulario de creación");
 		return "messages/form";
 	}
 

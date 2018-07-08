@@ -29,7 +29,7 @@ public class ImporterServiceImpl implements IImporterService {
 	@Override
 	public boolean importEvents(String pathFile) {
 
-		File file = new File("bent_core.log.2018-06-28-34Original.log");
+		File file = new File("bent_core.log.2018-06-28-33.log");
 		List<String> entries = new ArrayList<>();
 		try {
 			entries = FileUtils.readLines(file);
