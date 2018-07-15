@@ -10,6 +10,7 @@ public class Extractor {
 	private static DateFormat df = new SimpleDateFormat("HH:mm:ss, sss");
 	private Date timeStamp;
 	private String level;
+
 	private String thread;
 	private String message;
 	private String methodClass;
@@ -85,6 +86,14 @@ public class Extractor {
 
 	public void setMethodClass(String methodClass) {
 		this.methodClass = methodClass;
+	}
+
+	public String getLevel() {
+		return level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
 	}
 
 }

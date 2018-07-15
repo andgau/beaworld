@@ -33,7 +33,7 @@ import es.sinjava.ui.domain.LogEvent;
 import es.sinjava.ui.service.IEventService;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/mess")
 public class MessageController {
 
 	private Logger logger = LoggerFactory.getLogger(MessageController.class);

@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-  layout:decorator="layout">
-  <head>
-    <title>Messages : View all</title>
-  </head>
-  <body>
-    <h1 layout:fragment="header">Messages : Ver Todos list</h1>
-    <div layout:fragment="content" class="container">
-      <div class="pull-right">
-        <a href="form.html" th:href="@{/(form)}">Create Message</a>
-       </div>
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <td>Id</td>
-            <td>Creación</td>
-            <td>Resumen</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr th:if="${messages.empty}">
-            <td colspan="3">
-              No messages
-            </td>
-          </tr>
-          <tr th:each="message : ${messages}">
-            <td th:text="${message.id}">1</td>
-            <td th:text="${#calendars.format(message.created)}">
-              July 11, 2012 2:17:16 PM CDT
-            </td>
-            <td>
-              <a href="view.html"
-                  th:href="@{'/' + ${message.id}}"
-                  th:text="${message.messageEvent}">
-                The summary
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </body>
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Messages : View all</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Eventos</h1>
+	<div layout:fragment="content" class="container">
+		<div class="pull-right">
+			<a href="form.html" th:href="@{/(form)}">Create Message</a>
+		</div>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Level</td>
+					<td>Creación</td>
+					<td>Resumen</td>
+					<td>Resumen</td>
+					<td>Resumen</td>
+					<td>Resumen</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${messages.empty}">
+					<td colspan="3">No messages</td>
+				</tr>
+				<tr th:each="message : ${messages}">
+					<td th:text="${message.id}">1</td>
+					<td th:text="${message.level}">1</td>
+					<td th:text="${#calendars.format(message.created, 'dd/MM/yy HH:mm')}">01/01/18 13:15</td>
+					<td><a href="view.html" th:href="@{'/' + ${message.id}}"
+						th:text="${message.messageEvent}"> The summary </a></td>
+					<td th:text="${message.appAlias}">1</td>
+					<td th:text="${message.methodClass}">1</td>
+					<td th:text="${message.thread}">1</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
 </html>
