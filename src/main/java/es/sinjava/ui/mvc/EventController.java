@@ -71,11 +71,9 @@ public class EventController {
 	public ModelAndView view() {
 		
 		QueryForm queryForm= new QueryForm();
-		
 		queryForm.setInDate(new Date());
-		
 		queryForm.setOutDate(new Date());
-		
+		queryForm.setQuery("Pacao Pico");
 		return new ModelAndView("messages/search", "queryForm", queryForm);
 	}
 	
